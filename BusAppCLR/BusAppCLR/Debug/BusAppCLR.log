@@ -1,4 +1,6 @@
-﻿  MainForm.cpp
-MainForm.cpp(14): error C2728: "Bus": собственный массив не может содержать этот тип
-  MainForm.cpp(14): note: Вы имели в виду массив<Bus ^>?
-MainForm.cpp(14): error C2227: выражение слева от "->{ctor}" должно указывать на тип класса, структуры или объединения либо на универсальный тип
+﻿  Bus.cpp
+  MainForm.cpp
+MainForm.cpp(32): error C2653: MainForm: не является именем класса или пространства имен
+  StationManagement.cpp
+StationManagement.cpp(11): warning C4930: BusAppCLR::StationManagement busForm(BusAppCLR::MainForm): функция с прототипом не вызвана (предполагалось определение переменной?)
+  Создание кода...

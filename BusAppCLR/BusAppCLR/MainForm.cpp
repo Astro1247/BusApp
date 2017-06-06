@@ -11,11 +11,11 @@ namespace BusAppCLR {
 	System::Void MainForm::callBusManagement(System::Object^  sender, System::EventArgs^  e) {
 		StationManagement^ f2 = gcnew StationManagement(this);
 		f2->Show();
-		//log(gcnew String("123"));
 	}
 	const int count = 10;
 	//Bus bus1[count];
-
+	//int road2[10] = {};
+	
 }
 
 
@@ -26,11 +26,5 @@ void Main(array<String^>^ args) {
 	BusAppCLR::MainForm mainForm;
 	Application::Run(%mainForm);
 
-	
-} 
 
-void BusAppCLR::MainForm::log(System::String^ msg)
-{
-	System::Windows::Forms::Label^ label8 = gcnew System::Windows::Forms::Label();
-	label8->Text += "55555";
 }

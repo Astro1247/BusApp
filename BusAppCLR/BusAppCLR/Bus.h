@@ -1,17 +1,33 @@
 #pragma once
 ref class Bus
 {
+private: System::ComponentModel::IContainer^  components;
+private: System::Windows::Forms::Timer^  timer1;
+private: void InitializeComponent(void)
+{
+	this->components = (gcnew System::ComponentModel::Container());
+	this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+	this->timer1->Enabled = true;
+	this->timer1->Interval = 1;
+	this->timer1->Tick += gcnew System::EventHandler(this, &Bus::timer1_Tick);
+}
 public:
-	int busCount;
+	void timer1_Tick()
+	{
+		
+	}
 	Bus();
 	void stop();
-	static void print();
+	//void Print();
+	int Info(int);
 	//Bus(int id, int stationID, int routeID);
 	//Bus(int k) { busCount = k; };
 private:
-	int money;
-	int pass;
-	int pass_out;
-	int count;
+	int money = 0;
+	int pass = 0;
+	int pass_1 = 0;
+	int pass_out = 0;
+	int sum_pass = 0;
+	//int road_1[5];
 };
 
