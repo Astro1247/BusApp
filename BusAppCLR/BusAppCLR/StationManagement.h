@@ -102,7 +102,7 @@ namespace BusAppCLR {
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(104, 13);
+			this->checkBox1->Location = System::Drawing::Point(113, 11);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(90, 17);
 			this->checkBox1->TabIndex = 2;
@@ -112,7 +112,7 @@ namespace BusAppCLR {
 			// checkBox2
 			// 
 			this->checkBox2->AutoSize = true;
-			this->checkBox2->Location = System::Drawing::Point(104, 37);
+			this->checkBox2->Location = System::Drawing::Point(113, 35);
 			this->checkBox2->Name = L"checkBox2";
 			this->checkBox2->Size = System::Drawing::Size(90, 17);
 			this->checkBox2->TabIndex = 3;
@@ -122,7 +122,7 @@ namespace BusAppCLR {
 			// checkBox3
 			// 
 			this->checkBox3->AutoSize = true;
-			this->checkBox3->Location = System::Drawing::Point(104, 61);
+			this->checkBox3->Location = System::Drawing::Point(113, 59);
 			this->checkBox3->Name = L"checkBox3";
 			this->checkBox3->Size = System::Drawing::Size(90, 17);
 			this->checkBox3->TabIndex = 4;
@@ -132,7 +132,7 @@ namespace BusAppCLR {
 			// checkBox4
 			// 
 			this->checkBox4->AutoSize = true;
-			this->checkBox4->Location = System::Drawing::Point(104, 85);
+			this->checkBox4->Location = System::Drawing::Point(113, 83);
 			this->checkBox4->Name = L"checkBox4";
 			this->checkBox4->Size = System::Drawing::Size(90, 17);
 			this->checkBox4->TabIndex = 5;
@@ -142,7 +142,7 @@ namespace BusAppCLR {
 			// checkBox5
 			// 
 			this->checkBox5->AutoSize = true;
-			this->checkBox5->Location = System::Drawing::Point(104, 109);
+			this->checkBox5->Location = System::Drawing::Point(113, 107);
 			this->checkBox5->Name = L"checkBox5";
 			this->checkBox5->Size = System::Drawing::Size(90, 17);
 			this->checkBox5->TabIndex = 6;
@@ -153,7 +153,7 @@ namespace BusAppCLR {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(199, 132);
+			this->ClientSize = System::Drawing::Size(215, 132);
 			this->Controls->Add(this->checkBox5);
 			this->Controls->Add(this->checkBox4);
 			this->Controls->Add(this->checkBox3);
