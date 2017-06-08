@@ -19,9 +19,12 @@ Class BusAppCLR.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    System.Windows.Forms.Label label8 : Public
+    New_r r1 IsByValue : Public, InitOnly
+    Int32 bus_n : Public
+    Int32 way2 : Public
+    Bus[] buses : Public
   Methods:
-    log(String): PrivateScope, Public, HideBySig
+    checkStops(Int32): PrivateScope, Public, HideBySig
 Class BusAppCLR.StationManagement: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(BusAppCLR.MainForm): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
