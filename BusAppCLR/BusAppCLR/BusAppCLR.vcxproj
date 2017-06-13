@@ -28,6 +28,7 @@
   <ItemGroup>
     <ClCompile Include="Bus.cpp" />
     <ClCompile Include="MainForm.cpp" />
+    <ClCompile Include="New_r.cpp" />
     <ClCompile Include="Road.cpp" />
     <ClCompile Include="Route.cpp" />
     <ClCompile Include="Station.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="New_r.h" />
     <ClInclude Include="Road.h" />
     <ClInclude Include="Route.h" />
     <ClInclude Include="Station.h" />
@@ -52,6 +54,9 @@
     <EmbeddedResource Include="StationManagement.resx">
       <DependentUpon>StationManagement.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ControlPoints.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5424521B-714E-4C07-B693-38E11BD66BD8}</ProjectGuid>

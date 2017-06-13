@@ -6,6 +6,7 @@ public:
 	int mass(int, int, int);
 	New_r();
 	int i = 0;
+	bool forceSet(int, int, int);
 private:
 	
 	int n = 0;

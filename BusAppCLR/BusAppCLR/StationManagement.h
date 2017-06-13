@@ -175,8 +175,27 @@ namespace BusAppCLR {
 private: System::Void StationManagement_Load(System::Object^  sender, System::EventArgs^  e) {
 	for (int i = 1; i < 5; i++)
 	{
-		if (MainForm::checkStops(i) == 1)
-		{ }
+		//if (MainForm::checkStops(i-1) == 1)
+		//{
+			switch (MainForm::checkStops(i - 1))
+			{
+			case 1:
+				checkBox1->Checked = true;
+				break;
+			case 2:
+				checkBox2->Checked = true;
+				break;
+			case 3:
+				checkBox3->Checked = true;
+				break;
+			case 4:
+				checkBox4->Checked = true;
+				break;
+			case 5:
+				checkBox5->Checked = true;
+				break;
+			}
+		//}
 	}
 }
 };

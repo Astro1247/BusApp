@@ -12,7 +12,7 @@ private: void InitializeComponent(void)
 	this->timer1->Tick += gcnew System::EventHandler(this, &Bus::timer1_Tick);
 }
 public:
-	void timer1_Tick()
+	void timer1_Tick(System::Object^  sender, System::EventArgs^  e)
 	{
 		
 	}

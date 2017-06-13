@@ -33,6 +33,9 @@
     <ClCompile Include="Road.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
+    <ClCompile Include="New_r.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainForm.h">
@@ -53,6 +56,9 @@
     <ClInclude Include="Road.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="New_r.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">
@@ -61,5 +67,10 @@
     <EmbeddedResource Include="StationManagement.resx">
       <Filter>Файлы ресурсов</Filter>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ControlPoints.txt">
+      <Filter>Файлы исходного кода</Filter>
+    </Text>
   </ItemGroup>
 </Project>

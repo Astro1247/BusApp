@@ -72,6 +72,7 @@ namespace BusAppCLR {
 	private: System::Windows::Forms::Timer^  timer2;
 	private: System::Windows::Forms::TextBox^  label7;
 	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::TextBox^  debugBox;
 
 
 
@@ -96,7 +97,6 @@ namespace BusAppCLR {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			Bus ^buff = new Bus[100];
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MainForm::typeid));
 			this->menuPanel = (gcnew System::Windows::Forms::MenuStrip());
@@ -129,6 +129,7 @@ namespace BusAppCLR {
 			this->timer2 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->label7 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->debugBox = (gcnew System::Windows::Forms::TextBox());
 			this->menuPanel->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bus1))->BeginInit();
@@ -396,7 +397,6 @@ namespace BusAppCLR {
 			// 
 			// button1
 			// 
-			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
 			this->button1->Location = System::Drawing::Point(964, 123);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(85, 81);
@@ -405,12 +405,21 @@ namespace BusAppCLR {
 			this->button1->Visible = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MainForm::button1_Click);
 			// 
+			// debugBox
+			// 
+			this->debugBox->Location = System::Drawing::Point(833, 219);
+			this->debugBox->Multiline = true;
+			this->debugBox->Name = L"debugBox";
+			this->debugBox->Size = System::Drawing::Size(227, 163);
+			this->debugBox->TabIndex = 19;
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1084, 686);
+			this->Controls->Add(this->debugBox);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->bus2);
@@ -491,6 +500,7 @@ private: System::Void MainForm_Click(System::Object^  sender, System::EventArgs^
 	label5->Visible = false;
 	label7->Visible = false;
 	button1->Visible = false;
+	debugBox->Text += "X: " + Cursor->Position.X + " Y: " + Cursor->Position.Y + "\r\n";
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -505,16 +515,16 @@ private: System::Void MainForm_Click(System::Object^  sender, System::EventArgs^
 		 int m1 = 3, m2 = 0, m3 = 0;
 		 int way = 0;
 		 int new_road = 0;
-	public: New_r r1;
+	public: static New_r r1;
 		 int bus_n = 0;
 		 int way2 = 0;
 		 array<Bus ^> ^buses = gcnew array<Bus^>(5);
 
-	public: System::Int32 checkStops(int stop)
+	public: static System::Int32 checkStops(int stop)
 	{
 
-		int x[5] = {526, 526, 416, 526, 814};
-		int y[5] = {138, 264, 411, 508, 555};
+		int x[5] = { 526, 526, 416, 526, 814 };
+		int y[5] = { 138, 264, 411, 508, 544 };
 		/*if (k == 1) {
 			mass(526, 138, 1);
 		}
@@ -530,12 +540,14 @@ private: System::Void MainForm_Click(System::Object^  sender, System::EventArgs^
 		if (k == 5) {
 			mass(814, 555, 1);
 		}*/
-		int checdedY = r1.mass(-1, stop, 0);
-		int checdedX = r1.mass(stop, -1, 0);
-		if (checdedX == x[stop - 1] && checdedY == y[stop - 1])
-			return 1;
-		else
-			return 0;
+		int checdedY = r1.mass(-1, stop + 1, 0);
+		int checdedX = r1.mass(stop + 1, -1, 0);
+		for (int i = 0; i < 5; i++)
+		{
+			if (checdedX == x[i] && checdedY == y[i])
+				return i+1;
+		}
+		return 0;
 	}
 
 private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {

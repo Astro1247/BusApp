@@ -1,5 +1,5 @@
 #include "New_r.h"
-
+#include "Bus.h"
 
 
 New_r::New_r()
@@ -20,7 +20,7 @@ void New_r::Point(int k) {
 		n++;
 	}
 
-	if (n == 1) {
+	else if (n == 1) {
 		if (k == 1) {
 			mass(526, 138,1);
 		}
@@ -34,7 +34,7 @@ void New_r::Point(int k) {
 			mass(526, 508,1);
 		}
 		if (k == 5) {
-			mass(814, 555,1);
+			mass(814, 544,1);
 		}
 	}
 	
@@ -44,7 +44,7 @@ int road_x[7] = { 0,0,0,0,0,0 };
 int road_y[7] = { 0,0,0,0,0,0 };
 
 int New_r::mass(int k1, int k2, int k3) {
-
+	
 	if (k3 == 1) {
 		road_x[i] = k1;
 		road_y[i] = k2;
@@ -57,4 +57,15 @@ int New_r::mass(int k1, int k2, int k3) {
 		if (k2 == -1)
 			return road_x[k1];
 	}
+}
+
+bool New_r::forceSet(int x, int y, int num)
+{
+	if (num >= 0)
+	{
+		road_x[num] = x;
+		road_y[num] = y;
+		return true;
+	}
+	return false;
 }

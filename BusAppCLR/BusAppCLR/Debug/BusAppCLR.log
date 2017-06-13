@@ -1,6 +1,2 @@
-﻿  Bus.cpp
-  MainForm.cpp
-MainForm.cpp(32): error C2653: MainForm: не является именем класса или пространства имен
-  StationManagement.cpp
-StationManagement.cpp(11): warning C4930: BusAppCLR::StationManagement busForm(BusAppCLR::MainForm): функция с прототипом не вызвана (предполагалось определение переменной?)
-  Создание кода...
+﻿  BusAppCLR.vcxproj -> C:\Users\AstroNB\Source\Repos\BusApp\BusAppCLR\Debug\BusAppCLR.exe
+  BusAppCLR.vcxproj -> C:\Users\AstroNB\Source\Repos\BusApp\BusAppCLR\Debug\BusAppCLR.pdb (Partial PDB)
