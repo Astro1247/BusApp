@@ -20,7 +20,27 @@ namespace BusAppCLR {
 	public:
 		MainForm(void)
 		{
+			Road robl;
+			robl.init(1, 1, 200, 200, false);
 			InitializeComponent();
+			roads[0]->init(142, 186, 559, 186, false);
+			roads[1]->init(330, 281, 829, 281, false);
+			roads[2]->init(331, 358, 561, 435, false);
+			roads[3]->init(331, 435, 561, 435, false);
+			roads[4]->init(329, 513, 563, 513, false);
+			roads[5]->init(142, 593, 1221, 593, false);
+			roads[6]->init(330, 668, 676, 668, false);
+			roads[7]->init(563, 112, 676, 112, false);
+			roads[8]->init(562, 207, 676, 207, false);
+			roads[9]->init(331, 60, 331, 694, true);
+			roads[10]->init(408, 187, 408, 697, true);
+			roads[11]->init(485, 187, 485, 700, true);
+			roads[12]->init(562, 60, 562, 696, true);
+			roads[13]->init(678, 60, 678, 698, true);
+			roads[14]->init(755, 285, 755, 688, true);
+			roads[15]->init(832, 283, 832, 671, true);
+			roads[16]->init(909, 363, 909, 655, true);
+			roads[17]->init(985, 443, 985, 642, true);
 			//
 			//TODO: добавьте код конструктора
 			//
@@ -59,7 +79,9 @@ namespace BusAppCLR {
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Timer^  timer1;
 	private: System::Windows::Forms::Label^  label6;
-	private: System::Windows::Forms::PictureBox^  bus1;
+	public: System::Windows::Forms::PictureBox^  bus1;
+	private:
+
 
 
 
@@ -72,7 +94,9 @@ namespace BusAppCLR {
 	private: System::Windows::Forms::Timer^  timer2;
 	private: System::Windows::Forms::TextBox^  label7;
 	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::TextBox^  debugBox;
+	private: System::Windows::Forms::TextBox^  textBox1;
+
+
 
 
 
@@ -129,7 +153,7 @@ namespace BusAppCLR {
 			this->timer2 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->label7 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->debugBox = (gcnew System::Windows::Forms::TextBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->menuPanel->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bus1))->BeginInit();
@@ -405,13 +429,13 @@ namespace BusAppCLR {
 			this->button1->Visible = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MainForm::button1_Click);
 			// 
-			// debugBox
+			// textBox1
 			// 
-			this->debugBox->Location = System::Drawing::Point(833, 219);
-			this->debugBox->Multiline = true;
-			this->debugBox->Name = L"debugBox";
-			this->debugBox->Size = System::Drawing::Size(227, 163);
-			this->debugBox->TabIndex = 19;
+			this->textBox1->Location = System::Drawing::Point(86, 88);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(100, 20);
+			this->textBox1->TabIndex = 19;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MainForm::textBox1_TextChanged);
 			// 
 			// MainForm
 			// 
@@ -419,7 +443,7 @@ namespace BusAppCLR {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1084, 686);
-			this->Controls->Add(this->debugBox);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->bus2);
@@ -475,22 +499,25 @@ private: System::Void buttobus_1_Click(System::Object^  sender, System::EventArg
 }
 
 private: System::Void MainForm_Load(System::Object^  sender, System::EventArgs^  e) {
-		/* array <PictureBox^, 1>^ my;
-	
-		 my = gcnew array <PictureBox^, 1>(2);
-		 for (int i = 0; i < 2; i++) {
-			 my[i] = gcnew PictureBox;
-		 };
-
-		 my[1]->BackgroundImage = Image::FromFile("bus.bmp");
-		 my[1]->Top = 0;
-		 my[1]->Left = 50;
-		 my[1]->Location = System::Drawing::Point(100, 0);
-		 my[1]->TabIndex = 0;
-		 my[1]->TabStop = false;*/
-	//Bus a[2];
-	//int n = 1;
-
+	/*array<Road ^> ^roads = gcnew array<Road^>(18);
+	roads[0]->init(142, 186, 559, 186, false);
+	roads[1]->init(330, 281, 829, 281, false);
+	roads[2]->init(331, 358, 561, 435, false);
+	roads[3]->init(331, 435, 561, 435, false);
+	roads[4]->init(329, 513, 563, 513, false);
+	roads[5]->init(142, 593, 1221, 593, false);
+	roads[6]->init(330, 668, 676, 668, false);
+	roads[7]->init(563, 112, 676, 112, false);
+	roads[8]->init(562, 207, 676, 207, false);
+	roads[9]->init(331, 60, 331, 694, true);
+	roads[10]->init(408, 187, 408, 697, true);
+	roads[11]->init(485, 187, 485, 700, true);
+	roads[12]->init(562, 60, 562, 696, true);
+	roads[13]->init(678, 60, 678, 698, true);
+	roads[14]->init(755, 285, 755, 688, true);
+	roads[15]->init(832, 283, 832, 671, true);
+	roads[16]->init(909, 363, 909, 655, true);
+	roads[17]->init(985, 443, 985, 642, true);*/
 }
 private: System::Void MainForm_Click(System::Object^  sender, System::EventArgs^  e) {
 	label1->Visible = false;
@@ -500,7 +527,6 @@ private: System::Void MainForm_Click(System::Object^  sender, System::EventArgs^
 	label5->Visible = false;
 	label7->Visible = false;
 	button1->Visible = false;
-	debugBox->Text += "X: " + Cursor->Position.X + " Y: " + Cursor->Position.Y + "\r\n";
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -515,10 +541,12 @@ private: System::Void MainForm_Click(System::Object^  sender, System::EventArgs^
 		 int m1 = 3, m2 = 0, m3 = 0;
 		 int way = 0;
 		 int new_road = 0;
-	public: static New_r r1;
+		 public: static New_r r1;
 		 int bus_n = 0;
 		 int way2 = 0;
-		 array<Bus ^> ^buses = gcnew array<Bus^>(5);
+		 public: array<Bus ^> ^buses = gcnew array<Bus^>(5);
+		 public: array<Road ^> ^roads = gcnew array<Road^>(18);
+
 
 	public: static System::Int32 checkStops(int stop)
 	{
@@ -959,6 +987,12 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		label7->Text = "Автобус: " + currentActiveBus.ToString() + "\r\nДеньги: " + bus_1.Info(1).ToString() + "\r\nПассажиры: " + bus_1.Info(2).ToString() + "\r\nКилометраж: " + way.ToString() + "\r\nПроехало пассажиров: " + bus_1.Info(3).ToString();
 	if (currentActiveBus == 2)
 		label7->Text = "Автобус: " + currentActiveBus.ToString() + "\r\nДеньги: " + bus_2.Info(1).ToString() + "\r\nПассажиры: " + bus_2.Info(2).ToString() + "\r\nКилометраж: " + way2.ToString() + "\r\nПроехало пассажиров: " + bus_2.Info(3).ToString();
+}
+private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+	for (int i = 1; i < 17; i++)
+	{
+		textBox1->Text = roads[i]->startX.ToString();
+	}
 }
 };
 }

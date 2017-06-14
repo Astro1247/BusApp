@@ -27,6 +27,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bus.cpp" />
+    <ClCompile Include="BusStop.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="New_r.cpp" />
     <ClCompile Include="Road.cpp" />
@@ -36,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bus.h" />
+    <ClInclude Include="BusStop.h" />
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -57,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="ControlPoints.txt" />
+    <Text Include="Ways.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5424521B-714E-4C07-B693-38E11BD66BD8}</ProjectGuid>

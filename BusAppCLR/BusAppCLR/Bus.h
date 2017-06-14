@@ -14,7 +14,6 @@ private: void InitializeComponent(void)
 public:
 	void timer1_Tick(System::Object^  sender, System::EventArgs^  e)
 	{
-		
 	}
 	Bus();
 	void stop();

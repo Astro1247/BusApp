@@ -19,9 +19,11 @@ Class BusAppCLR.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
+    System.Windows.Forms.PictureBox bus1 : Public
     Int32 bus_n : Public
     Int32 way2 : Public
     Bus[] buses : Public
+    Road[] roads : Public
     New_r r1 IsByValue : Public, Static, InitOnly
   Methods:
     checkStops(Int32): PrivateScope, Public, Static, HideBySig
