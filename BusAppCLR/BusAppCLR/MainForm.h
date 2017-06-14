@@ -20,27 +20,7 @@ namespace BusAppCLR {
 	public:
 		MainForm(void)
 		{
-			Road robl;
-			robl.init(1, 1, 200, 200, false);
 			InitializeComponent();
-			roads[0]->init(142, 186, 559, 186, false);
-			roads[1]->init(330, 281, 829, 281, false);
-			roads[2]->init(331, 358, 561, 435, false);
-			roads[3]->init(331, 435, 561, 435, false);
-			roads[4]->init(329, 513, 563, 513, false);
-			roads[5]->init(142, 593, 1221, 593, false);
-			roads[6]->init(330, 668, 676, 668, false);
-			roads[7]->init(563, 112, 676, 112, false);
-			roads[8]->init(562, 207, 676, 207, false);
-			roads[9]->init(331, 60, 331, 694, true);
-			roads[10]->init(408, 187, 408, 697, true);
-			roads[11]->init(485, 187, 485, 700, true);
-			roads[12]->init(562, 60, 562, 696, true);
-			roads[13]->init(678, 60, 678, 698, true);
-			roads[14]->init(755, 285, 755, 688, true);
-			roads[15]->init(832, 283, 832, 671, true);
-			roads[16]->init(909, 363, 909, 655, true);
-			roads[17]->init(985, 443, 985, 642, true);
 			//
 			//TODO: добавьте код конструктора
 			//
@@ -527,6 +507,8 @@ private: System::Void MainForm_Click(System::Object^  sender, System::EventArgs^
 	label5->Visible = false;
 	label7->Visible = false;
 	button1->Visible = false;
+	POINT p;
+	textBox1->Text = MainForm::MousePosition.X.ToString() + " " + MainForm::MousePosition.Y.ToString();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -545,7 +527,10 @@ private: System::Void MainForm_Click(System::Object^  sender, System::EventArgs^
 		 int bus_n = 0;
 		 int way2 = 0;
 		 public: array<Bus ^> ^buses = gcnew array<Bus^>(5);
-		 public: array<Road ^> ^roads = gcnew array<Road^>(18);
+	//public: Road roads;
+
+			
+		
 
 
 	public: static System::Int32 checkStops(int stop)
@@ -819,9 +804,8 @@ private: System::Void button6_Click(System::Object^  sender, System::EventArgs^ 
 	button6->Visible = false;
 	toolStripStatusLabel4->Text = "2";
 
-
-	bus2->Top = r1.mass(-1, 0, 0);
-	bus2->Left = r1.mass(0, -1, 0);
+	bus2->Top = 0;
+	bus2->Left = 537;
 
 	//button6->Text= r1.mass(-1, 0, 0).ToString();
 	bus2->Visible = true;
@@ -835,7 +819,47 @@ private: System::Void button6_Click(System::Object^  sender, System::EventArgs^ 
 		 
 private: System::Void timer2_Tick(System::Object^  sender, System::EventArgs^  e)
 {
-	
+	cli::array<array<int>^>^ roads = gcnew cli::array<array<int>^>(20);
+	int coords[80] = { 1, 126, 418, 126, 189, 221, 688, 221, 190, 298, 420, 375, 190, 375, 420, 375, 188, 453, 422, 453, 1, 533, 1080, 533, 189, 608, 535, 608, 422, 52, 535, 52, 421, 147, 535, 147, 536, 379, 845, 379, 536, 455, 845, 455, 190, 0, 190, 634, 267, 127, 267, 637, 344, 127, 344, 640, 421, 0, 421, 636, 537, 0, 537, 638, 614, 225, 614, 628, 691, 223, 691, 611, 768, 303, 768, 595, 844, 383, 844, 582 };
+	for (int i = 0; i < 18; i++) roads[i] = gcnew cli::array<int>(4);
+	int k = 0;
+	for (int r = 0; r < 18; r++)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			roads[r][i] = coords[k];
+			k++;
+		}
+	}
+
+	int xxx = find(537, 0);
+	int b1 = bus2->Top;
+	int b2 = bus2->Left;
+	int a = 0;
+}
+public: int findClosest(int x, int y)
+{
+	return 1;
+}
+public: int find(int x, int y)
+{
+	cli::array<array<int>^>^ roads = gcnew cli::array<array<int>^>(20);
+	int coords[80] = { 1, 126, 418, 126, 189, 221, 688, 221, 190, 298, 420, 375, 190, 375, 420, 375, 188, 453, 422, 453, 1, 533, 1080, 533, 189, 608, 535, 608, 422, 52, 535, 52, 421, 147, 535, 147, 536, 379, 845, 379, 536, 455, 845, 455, 190, 0, 190, 634, 267, 127, 267, 637, 344, 127, 344, 640, 421, 0, 421, 636, 537, 0, 537, 638, 614, 225, 614, 628, 691, 223, 691, 611, 768, 303, 768, 595, 844, 383, 844, 582 };
+	for (int i = 0; i < 18; i++) roads[i] = gcnew cli::array<int>(4);
+	int k = 0;
+	for (int r = 0; r < 18; r++)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			roads[r][i] = coords[k];
+			k++;
+		}
+	}
+	for (int i = 0; i < 100000; i++)
+	{
+		if (x == roads[i][0] || x == roads[i][2] || y == roads[i][1] || y == roads[i][3])
+			return i+1;
+	} while (true);
 }
 private: System::Void bus2_Click(System::Object^  sender, System::EventArgs^  e) {
 	currentActiveBus = 2;
@@ -850,12 +874,23 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	if (currentActiveBus == 2)
 		label7->Text = "Автобус: " + currentActiveBus.ToString() + "\r\nДеньги: " + bus_2.Info(1).ToString() + "\r\nПассажиры: " + bus_2.Info(2).ToString() + "\r\nКилометраж: " + way2.ToString() + "\r\nПроехало пассажиров: " + bus_2.Info(3).ToString();
 }
-private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-	for (int i = 1; i < 17; i++)
-	{
-		textBox1->Text = roads[i]->startX.ToString();
+	private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+		//for (int i = 1; i < 17; i++)
+		//{
+		cli::array<array<int>^>^ roads = gcnew cli::array<array<int>^>(20);
+		int coords[80] = { 1, 126, 418, 126, 189, 221, 688, 221, 190, 298, 420, 375, 190, 375, 420, 375, 188, 453, 422, 453, 1, 533, 1080, 533, 189, 608, 535, 608, 422, 52, 535, 52, 421, 147, 535, 147, 536, 379, 845, 379, 536, 455, 845, 455, 190, 0, 190, 634, 267, 127, 267, 637, 344, 127, 344, 640, 421, 0, 421, 636, 537, 0, 537, 638, 614, 225, 614, 628, 691, 223, 691, 611, 768, 303, 768, 595, 844, 383, 844, 582 };
+		for (int i = 0; i < 18; i++) roads[i] = gcnew cli::array<int>(4);
+		int k = 0;
+			for (int r = 0; r < 18; r++)
+			{
+				for (int i = 0; i < 4; i++)
+				{
+					roads[r][i] = coords[k];
+					k++;
+				}
+			}
+		//}
 	}
-}
 };
 }
 

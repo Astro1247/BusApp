@@ -1,32 +1,22 @@
 ﻿  Bus.cpp
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\Bus.h(17): error C2653: BusAppCLR: не является именем класса или пространства имен
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\Bus.h(17): error C3861: checkStops: идентификатор не найден
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\Mainform.h(544): warning C4677: r1: сигнатура члена, не являющегося частным, содержит частный тип сборки "New_r"
+c:\users\astronb\source\repos\busapp\busappclr\busappclr\Mainform.h(525): warning C4677: r1: сигнатура члена, не являющегося частным, содержит частный тип сборки "New_r"
   c:\users\astronb\source\repos\busapp\busappclr\busappclr\New_r.h(3): note:  см. объявление "New_r"
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\Mainform.h(547): warning C4677: buses: сигнатура члена, не являющегося частным, содержит частный тип сборки "Bus"
+c:\users\astronb\source\repos\busapp\busappclr\busappclr\Mainform.h(528): warning C4677: buses: сигнатура члена, не являющегося частным, содержит частный тип сборки "Bus"
   c:\users\astronb\source\repos\busapp\busappclr\busappclr\Bus.h(3): note:  см. объявление "Bus"
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\Mainform.h(548): warning C4677: roads: сигнатура члена, не являющегося частным, содержит частный тип сборки "Road"
-  c:\users\astronb\source\repos\busapp\busappclr\busappclr\Road.h(3): note:  см. объявление "Road"
 Bus.cpp(20): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   MainForm.cpp
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\Bus.h(17): error C2653: BusAppCLR: не является именем класса или пространства имен
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\Bus.h(17): error C3861: checkStops: идентификатор не найден
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\MainForm.h(544): warning C4677: r1: сигнатура члена, не являющегося частным, содержит частный тип сборки "New_r"
+c:\users\astronb\source\repos\busapp\busappclr\busappclr\MainForm.h(525): warning C4677: r1: сигнатура члена, не являющегося частным, содержит частный тип сборки "New_r"
   c:\users\astronb\source\repos\busapp\busappclr\busappclr\New_r.h(3): note:  см. объявление "New_r"
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\MainForm.h(547): warning C4677: buses: сигнатура члена, не являющегося частным, содержит частный тип сборки "Bus"
+c:\users\astronb\source\repos\busapp\busappclr\busappclr\MainForm.h(528): warning C4677: buses: сигнатура члена, не являющегося частным, содержит частный тип сборки "Bus"
   c:\users\astronb\source\repos\busapp\busappclr\busappclr\Bus.h(3): note:  см. объявление "Bus"
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\MainForm.h(548): warning C4677: roads: сигнатура члена, не являющегося частным, содержит частный тип сборки "Road"
-  c:\users\astronb\source\repos\busapp\busappclr\busappclr\Road.h(3): note:  см. объявление "Road"
-  New_r.cpp
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\Bus.h(17): error C2653: BusAppCLR: не является именем класса или пространства имен
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\Bus.h(17): error C3861: checkStops: идентификатор не найден
   StationManagement.cpp
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\Bus.h(17): error C2653: BusAppCLR: не является именем класса или пространства имен
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\Bus.h(17): error C3861: checkStops: идентификатор не найден
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\MainForm.h(544): warning C4677: r1: сигнатура члена, не являющегося частным, содержит частный тип сборки "New_r"
+c:\users\astronb\source\repos\busapp\busappclr\busappclr\MainForm.h(525): warning C4677: r1: сигнатура члена, не являющегося частным, содержит частный тип сборки "New_r"
   c:\users\astronb\source\repos\busapp\busappclr\busappclr\New_r.h(3): note:  см. объявление "New_r"
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\MainForm.h(547): warning C4677: buses: сигнатура члена, не являющегося частным, содержит частный тип сборки "Bus"
+c:\users\astronb\source\repos\busapp\busappclr\busappclr\MainForm.h(528): warning C4677: buses: сигнатура члена, не являющегося частным, содержит частный тип сборки "Bus"
   c:\users\astronb\source\repos\busapp\busappclr\busappclr\Bus.h(3): note:  см. объявление "Bus"
-c:\users\astronb\source\repos\busapp\busappclr\busappclr\MainForm.h(548): warning C4677: roads: сигнатура члена, не являющегося частным, содержит частный тип сборки "Road"
-  c:\users\astronb\source\repos\busapp\busappclr\busappclr\Road.h(3): note:  см. объявление "Road"
+StationManagement.cpp(11): warning C4930: BusAppCLR::StationManagement busForm(BusAppCLR::MainForm): функция с прототипом не вызвана (предполагалось определение переменной?)
   Создание кода...
+c:\users\astronb\source\repos\busapp\busappclr\busappclr\bus.cpp(33): warning C4715: Bus::Info: значение возвращается не при всех путях выполнения
+  Bus.obj : /DEBUG:FASTLINK не поддерживается, если присутствует управляемый код; выполняется перезапуск компоновки с /DEBUG:FULL
+  BusAppCLR.vcxproj -> C:\Users\AstroNB\Source\Repos\BusApp\BusAppCLR\Debug\BusAppCLR.exe
+  BusAppCLR.vcxproj -> C:\Users\AstroNB\Source\Repos\BusApp\BusAppCLR\Debug\BusAppCLR.pdb (Partial PDB)
