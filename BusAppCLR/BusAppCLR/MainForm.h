@@ -140,6 +140,50 @@ namespace BusAppCLR {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bus2))->BeginInit();
 			this->SuspendLayout();
 			// 
+			// MainForm
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(1084, 686);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->bus2);
+			this->Controls->Add(this->button6);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->buttobus_2);
+			this->Controls->Add(this->bus1);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->buttobus_1);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->statusStrip1);
+			this->Controls->Add(this->menuPanel);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MainMenuStrip = this->menuPanel;
+			this->MaximizeBox = false;
+			this->Name = L"MainForm";
+			this->RightToLeftLayout = true;
+			this->ShowIcon = false;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"BusApp";
+			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
+			this->Click += gcnew System::EventHandler(this, &MainForm::MainForm_Click);
+			this->menuPanel->ResumeLayout(false);
+			this->menuPanel->PerformLayout();
+			this->statusStrip1->ResumeLayout(false);
+			this->statusStrip1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bus1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bus2))->EndInit();
+			this->ResumeLayout(false);
+			this->PerformLayout();
+			// 
 			// menuPanel
 			// 
 			this->menuPanel->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
@@ -416,50 +460,7 @@ namespace BusAppCLR {
 			this->textBox1->Size = System::Drawing::Size(100, 20);
 			this->textBox1->TabIndex = 19;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MainForm::textBox1_TextChanged);
-			// 
-			// MainForm
-			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(1084, 686);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->label7);
-			this->Controls->Add(this->bus2);
-			this->Controls->Add(this->button6);
-			this->Controls->Add(this->button5);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->buttobus_2);
-			this->Controls->Add(this->bus1);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->buttobus_1);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->statusStrip1);
-			this->Controls->Add(this->menuPanel);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
-			this->MainMenuStrip = this->menuPanel;
-			this->MaximizeBox = false;
-			this->Name = L"MainForm";
-			this->RightToLeftLayout = true;
-			this->ShowIcon = false;
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"BusApp";
-			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
-			this->Click += gcnew System::EventHandler(this, &MainForm::MainForm_Click);
-			this->menuPanel->ResumeLayout(false);
-			this->menuPanel->PerformLayout();
-			this->statusStrip1->ResumeLayout(false);
-			this->statusStrip1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bus1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bus2))->EndInit();
-			this->ResumeLayout(false);
-			this->PerformLayout();
+
 
 		}
 #pragma endregion
